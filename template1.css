@@ -12,7 +12,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url('/images/wallpaperbetter.jpg');
+    background-image: url('/images/wallpaperbetterupscaled.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -125,7 +125,37 @@ a {
 
 
 
+@media screen and (max-width: 600px) {
+    body {
+        background-size: cover;
+            /* Change background size to cover */
+        /* Adjust background size for small screens */
+    }
 
+    .wrapper {
+        width: 90%;
+        /* Make the wrapper take up 90% of the screen width */
+        max-width: 400px;
+        /* Set a maximum width for smaller screens */
+        margin: auto;
+        /* Center the wrapper */
+    }
+
+    .wrapper h1 {
+        font-size: 24px;
+        /* Decrease font size for smaller screens */
+    }
+
+    .input-box input {
+        font-size: 14px;
+        /* Decrease font size for smaller screens */
+    }
+
+    .wrapper .btn {
+        font-size: 14px;
+        /* Decrease font size for smaller screens */
+    }
+}
 
 
 
