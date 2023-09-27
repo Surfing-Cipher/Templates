@@ -5,7 +5,7 @@
      margin: 0;
      padding: 0;
      background-color: #f4f4f4;
-     background-color: orange;
+     background-image: url(/images/orange\ background.png);
      background-size: cover;
      background-position: center;
      
@@ -51,13 +51,22 @@ main {
      display: inline;
  }
 
-.navbar li {
-     margin: 20px;
- }
-
 .navbar li a {
      color: black;
      text-decoration: none;
+     font-weight: bold;
+     font-size: 20px;
+ }
+
+ .navbar ul {
+     list-style: none;
+     padding: 0;
+     margin: 0;
+ }
+
+ .navbar li {
+     display: inline-block;
+     margin: 0 10px;
  }
 
 
@@ -119,13 +128,13 @@ main {
 
  /*image link and how it is positioned under the image*/
 .gallery-link {
-    font-weight: bold;
+    font-weight: bolder;
     color: black;
     text-decoration: none;
     display: block;
-    margin-top: 10px;
-    /* Add margin to create space */
+    
 }
+
 
 
 
@@ -172,18 +181,57 @@ at middle of screen */
  }
 
 @media screen and (max-width: 600px) {
-     .gallery {
-         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-         grid-gap: 10px;
-     }
+    body {
+        font-family: 'Yaldevi', sans-serif;
+    }
 
-     .gallery-img {
-         width: 150px;
-         height: 150px;
-     }
+    main {
+        margin: 10px;
+    }
 
-     .heading {
-         font-size: 20px;
-     }
+    .heading {
+        font-size: 20px;
+    }
+
+    .head-img {
+        height: 60px;
+        margin-left: 20px;
+    }
+
+    .navbar {
+        height: 50px;
+    }
+
+    .navbar li {
+        margin: 10px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-gap: 10px;
+    }
+
+    .gallery-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .gallery-item {
+        border: #f4f4f4 solid 2px;
+    }
+
+    .gallery-link {
+        margin-top: 5px;
+    }
+
+    .close-button {
+        font-size: 40px;
+        right: 20px;
+    }
+
+    #popupImage {
+        max-width: 90%;
+        max-height: 90%;
+    }
 }
 
