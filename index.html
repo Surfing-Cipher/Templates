@@ -1,17 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="shortcut icon" href="/images/icon.ico" type="image/x-icon">
+    <script src="main.js"></script>
     <title>Login Templates</title>
 </head>
+
 <body>
-    
-    <a href="Template1.html">Template 1</a>
-    <br>
-    <br>
-    
+    <div class="navbar">
+        <div class="heading">
+            <h3>Gallery</h3>
+        </div>
+        <img class="head-img" src="https://codetheweb.blog/assets/img/icon2.png">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+   
+    <main>
+    <!-- Image Gallery section all image in one div -->
+    <div class="gallery">
+
+        <div class="gallery-item">
+        <img src="/images/Template1.PNG" alt="Image 2" class="gallery-img"
+            onclick="showImage(src)">
+        <div class="gallery-link"><a href="Template1.html">Template 1</a></div>
+        </div>
+
+        <div class="gallery-item">
+        <img src="/images/4551-this.png" alt="Image 3"
+            class="gallery-img" onclick="showImage(src)">
+        </div>
+
+        <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=
+pexels-pixabay-268533.jpg&fm=jpg" alt="Image 4" class="gallery-img" onclick="showImage(src)">
+
+        <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=
+pexels-pixabay-268533.jpg&fm=jpg" alt="Image 5" class="gallery-img" onclick="showImage(src)">
+
+        <img src="https://media.istockphoto.com/id/517188688/photo/mountain-landscape.webp?
+b=1&s=170667a&w=0&k=20&c=0FSPkjeK1u_EksXE1VrATh7MD74dnFiVmMmaMhtSYwI=" alt="Image 6" class="gallery-img"
+            onclick="showImage(src)">
+            
+        <img src="https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_640.jpg" alt="Image 7"
+            class="gallery-img" onclick="showImage(src)">
+
+        <img src="https://media.istockphoto.com/id/517188688/photo/mountain-landscape.webp?
+b=1&s=170667a&w=0&k=20&c=0FSPkjeK1u_EksXE1VrATh7MD74dnFiVmMmaMhtSYwI=" alt="Image 8" class="gallery-img"
+            onclick="showImage(src)">
+
+        <img src="https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_640.jpg" alt="Image 9"
+            class="gallery-img" onclick="showImage(src)">
+
+        <img src="https://media.istockphoto.com/id/517188688/photo/mountain-landscape.webp?
+b=1&s=170667a&w=0&k=20&c=0FSPkjeK1u_EksXE1VrATh7MD74dnFiVmMmaMhtSYwI=" alt="Image 10" class="gallery-img"
+            onclick="showImage(src)">
+
+    </div>
+
+    <!-- Image containter where image will show in big size -->
+    <div class="image-popup-container" id="imagePopup">
+        <span class="close-button" onclick="closeImage()">×</span>
+        <img src="" alt="Popup Image" id="popupImage">
+    </div>
 
 
+    </main>
 </body>
+
 </html>
