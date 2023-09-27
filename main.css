@@ -130,9 +130,9 @@ main {
 .gallery-link {
     font-weight: bolder;
     color: black;
-    text-decoration: none;
+    text-decoration: underline;
     display: block;
-    
+    margin-top: 5px;
 }
 
 
@@ -218,10 +218,6 @@ at middle of screen */
 
     .gallery-item {
         border: #f4f4f4 solid 2px;
-    }
-
-    .gallery-link {
-        margin-top: 5px;
     }
 
     .close-button {
