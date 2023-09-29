@@ -2,6 +2,7 @@
 
  body {
      font-family: Arial, sans-serif;
+     width: 100%;
      margin: 0;
      padding: 0;
      background-color: #f4f4f4;
@@ -255,6 +256,7 @@ at middle of screen */
 
     .navbar {
         height: 50px;
+        width: 100%;
     }
     .navbar ul{
         white-space: nowrap;
@@ -301,6 +303,7 @@ at middle of screen */
 
     .navbar {
         height: 45px;
+        width: 100%;
     }
 
     .navbar li {
@@ -344,6 +347,7 @@ at middle of screen */
 
     .navbar {
         height: 50px;
+        width: 100%;
     }
 
     .navbar li {
@@ -376,6 +380,11 @@ at middle of screen */
 }
 
 @media screen and (max-width: 1400px) {
+
+    body{
+        width: 100%;
+    }
+
     .heading {
         font-size: 28px;
         display: none;
@@ -388,7 +397,7 @@ at middle of screen */
 
     .navbar {
         height: 55px;
-        width: 100%;
+        width: 110.9vw;
     }
 
     .navbar li {
