@@ -378,6 +378,7 @@ at middle of screen */
 @media screen and (max-width: 1400px) {
     .heading {
         font-size: 28px;
+        display: none;
     }
 
     .head-img {
@@ -387,6 +388,7 @@ at middle of screen */
 
     .navbar {
         height: 55px;
+        width: 100%;
     }
 
     .navbar li {
