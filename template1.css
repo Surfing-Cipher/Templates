@@ -17,47 +17,28 @@ body{
     background-position: center;
 }
 
-.wrapper {
+.wrapper, .register-panel, .forgot-password-panel {
     width: 420px;
     background-color: transparent;
     border: 2px solid rgba(157, 91, 233, 0.911);
-    backdrop-filter: blur(2px);
-    color: aliceblue;
-    border-radius: 10px;
-    padding: 30px 40px;
-}
-
-.register-panel {
-    width: 420px;
-    background-color: transparent;
-    border: 2px solid rgba(157, 91, 233, 0.911);
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(6px);
     color: aliceblue;
     border-radius: 10px;
     padding: 30px 40px;
 }
 
 
-.wrapper h1{
+.wrapper h1, .register-panel h1, .forgot-password-panel h1{
     font-size: 36px;
     text-align: center;
     color: rgba(50, 19, 187, 0.877);
 }
 
-.register-panel h1{
-    font-size: 36px;
-    text-align: center;
-    color: rgba(50, 19, 187, 0.877);
+.forgot-password-panel h4{
+    color: #333;
 }
 
-.wrapper .input-box{
-    position: relative;
-    width: 100%;
-    height: 40px;
-    margin: 30px 0;
-}
-
-.register-panel .input-box{
+.wrapper .input-box, .register-panel .input-box, .forgot-password-panel .input-box{
     position: relative;
     width: 100%;
     height: 40px;
@@ -85,7 +66,7 @@ body{
 }
 
 .input-box input::placeholder{
-    color: aliceblue;
+    color: rgba(11, 11, 94, 0.726);
 }
 
 .wrapper .remember-forgot {
@@ -109,7 +90,7 @@ a {
     text-decoration: none;
 }
 
-.wrapper .btn {
+.wrapper .btn, .register-panel .btn, .forgot-password-panel .btn {
     width: 100%;
     height: 45px;
     background: rgba(0, 0, 0, 0.486);
@@ -125,68 +106,35 @@ a {
     border: 2px solid;
 }
 
-.register-panel .btn{
-    width: 100%;
-    height: 45px;
-    background: rgba(0, 0, 0, 0.486);
-    border: none;
-    outline: none;
-    border-radius: 40px;
-    box-shadow: 0 0 10px rgb(19, 18, 18);
-    cursor: pointer;
-    font-size: 16px;
-    color: whitesmoke;
-    font-weight: 600;
-    transition: all .5s ease;
-    border: 2px solid;  
-}
-
-.wrapper .btn:hover {
+.wrapper .btn:hover, .register-panel .btn:hover, .forgot-password-panel .btn:hover {
     color: #333;
     border-color: white;
     background-color: whitesmoke;
 }
 
-.register-panel .btn:hover{
-    color: #333;
-    border-color: white;
-    background-color: whitesmoke;
-}
-
-.wrapper .register-link{
+.wrapper, .forgot-password-panel, .register-link{
     font-size: 14.5px;
     text-align: center;
     margin: 20px 0 15px;
     cursor: pointer;
 }
 
-.register-panel .back-to-login{
+.register-panel, .forgot-password-panel, .back-to-login{
     font-size: 15px;
     text-align: center;
     margin: 20px 0 15px;
     cursor: pointer;
 }
 
-.register-link p a {
+.register-link p a, .forgot-password-panel p a, .back-to-login p a {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
 }
 
-.back-to-login p a{
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.register-link p a:hover{
+.register-link p a:hover, .back-to-login p a:hover, .forgot-password-panel p a:hover{
     text-decoration: underline;
 }
-
-.back-to-login p a:hover{
-     text-decoration: underline;   
-}
-
 
 
 @media screen and (max-width: 600px) {
@@ -196,7 +144,7 @@ a {
         /* Adjust background size for small screens */
     }
 
-    .wrapper {
+    .wrapper, .register-panel, .forgot-password-panel {
         width: 90%;
         /* Make the wrapper take up 90% of the screen width */
         max-width: 400px;
@@ -205,7 +153,7 @@ a {
         /* Center the wrapper */
     }
 
-    .wrapper h1 {
+    .wrapper h1, .register-panel h1, .forgot-password-panel h1 {
         font-size: 24px;
         /* Decrease font size for smaller screens */
     }
@@ -215,7 +163,7 @@ a {
         /* Decrease font size for smaller screens */
     }
 
-    .wrapper .btn {
+    .wrapper .btn, .register-panel .btn, .forgot-password-panel .btn {
         font-size: 17px;
         /* Decrease font size for smaller screens */
         color: #333;
@@ -223,40 +171,31 @@ a {
         background-color: whitesmoke;
     }
 
-    .wrapper .btn:hover {
+    .wrapper .btn:hover, .register-panel .btn:hover, .forgot-password-panel .btn:hover {
         color: #333;
         border-color: white;
         background-color: whitesmoke;
     }
 
-    .register-panel{
-        width: 90%;
-        /* Make the wrapper take up 90% of the screen width */
-        max-width: 400px;
-        /* Set a maximum width for smaller screens */
-        margin: auto;
-        /* Center the wrapper */
+}
+
+@media screen and (max-width: 400px) {
+
+    /* Your CSS adjustments for screens up to 400 pixels wide */
+    body {
+        /* Example adjustment */
+        background-size: contain;
     }
 
-    .register-panel h1{
-        font-size: 24px;
-        /* Decrease font size for smaller screens */
+    .wrapper,
+    .register-panel,
+    .forgot-password-panel {
+        /* Example adjustment */
+        width: 80%;
+        max-width: 350px;
     }
 
-    .register-panel .btn {
-        font-size: 17px;
-        /* Decrease font size for smaller screens */
-        color: #333;
-        border-color: white;
-        background-color: whitesmoke;
-    }
-    
-    .register-panel .btn:hover {
-        color: #333;
-        border-color: white;
-        background-color: whitesmoke;
-    }
-
+    /* Add more adjustments as needed */
 }
 
 
