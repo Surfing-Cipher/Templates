@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/ef16f38cde.js" crossorigin="anonymous"></script>
+    <title>ToDo List</title>
+
+    <style>
+        .navbar-brand.count::after {
+            content: "0";
+            color: white;
+            font-size: 1rem;
+            vertical-align: super;
+            margin-left: 5px;
+            background-color: #007bff;
+            padding: 2px 6px;
+            border-radius: 50%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">ToDo list: <span class="count">0</span></span>
+    </nav>
+
+    <div class="container-fluid bg-light" style="min-height: 100vh">
+        <div class="container">
+
+            <div class="jumbotron mt-4">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="spent at"><i class="fa-solid fa-pen"
+                                style="color: #3170dd; font-size: 1.5rem;"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="taskInput" placeholder="Enter task"
+                        aria-label="Enter task" aria-describedby="add-task" />
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-primary" type="button" id="btnAddTask">Add Task</button>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <ul class="list-group" id="taskList"></ul>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const taskInputEl = document.querySelector("#taskInput");
+        const taskListEl = document.querySelector("#taskList");
+        const countElement = document.querySelector(".count");
+
+        function updateCount() {
+            const taskItems = taskListEl.querySelectorAll(".list-group-item");
+            countElement.textContent = taskItems.length;
+        }
+
+        function addTask() {
+            const taskText = taskInputEl.value.trim();
+
+            if (taskText !== "") {
+                const taskItem = document.createElement("li");
+                taskItem.classList.add("list-group-item", "d-flex", "justify-content-between");
+
+                taskItem.innerHTML = `
+                    <div class="d-flex flex-column">
+                        ${taskText}
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-outline-danger btn-sm" onclick="deleteTask(this)">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </div>
+                `;
+
+                taskListEl.appendChild(taskItem);
+
+                taskInputEl.value = "";
+                updateCount();
+            }
+        }
+
+        function deleteTask(buttonElement) {
+            const taskItem = buttonElement.closest(".list-group-item");
+            taskItem.remove();
+            updateCount();
+        }
+
+        const addTaskButton = document.querySelector("#btnAddTask");
+        addTaskButton.addEventListener("click", addTask);
+
+        taskInputEl.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                addTask();
+            }
+        });
+
+        // Assuming you have a server/API endpoint URL, replace 'YOUR_API_ENDPOINT_URL' with the actual URL.
+            const API_ENDPOINT = 'https://jsonplaceholder.typicode.com/todos/1';
+
+            // Function to send a GET request to retrieve ToDo list from the API
+            function getTodoListFromAPI() {
+                fetch(API_ENDPOINT)
+                    .then(response => response.json())
+                    .then(data => {
+                        // Update your local storage with the retrieved data
+                        localStorage.setItem('todoList', JSON.stringify(data));
+                    })
+                    .catch(error => console.error('Error fetching ToDo list from API:', error));
+            }
+
+            // Function to send a POST request to add a new task to the API
+            function addTaskToAPI(newTask) {
+                fetch(API_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(newTask)
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        // Assuming the API returns the updated ToDo list after adding the task
+                        localStorage.setItem('todoList', JSON.stringify(data));
+                    })
+                    .catch(error => console.error('Error adding task to API:', error));
+            }
+
+            // Function to send a DELETE request to remove a task from the API
+            function deleteTaskFromAPI(taskId) {
+                fetch(`${API_ENDPOINT}/${taskId}`, {
+                    method: 'DELETE'
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        // Assuming the API returns the updated ToDo list after deleting the task
+                        localStorage.setItem('todoList', JSON.stringify(data));
+                    })
+                    .catch(error => console.error('Error deleting task from API:', error));
+            }
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
